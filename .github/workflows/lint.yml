@@ -46,6 +46,3 @@ jobs:
 
       - name: Run linter
         run: npm run -s lint
-
-      - name: Fix linting errors
-        run: npm run -s lint:fix
