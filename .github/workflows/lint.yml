@@ -49,6 +49,3 @@ jobs:
 
       - name: Fix linting errors
         run: npm run -s lint:fix
-
-      - name: Commit changes
-        run: git commit -am "chore: fix linting errors"
