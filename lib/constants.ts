@@ -1,5 +1,6 @@
 export const NAV_ITEMS = [
-    { href: '/', label: 'Dashboard' },
+    { href: '/', label: 'Stock Market' },
+    { href: '/crypto', label: 'Crypto' },
     { href: '/search', label: 'Search' },
     // { href: '/watchlist', label: 'Watchlist' },
 ];
@@ -337,3 +338,132 @@ export const WATCHLIST_TABLE_HEADER = [
     'Alert',
     'Action',
 ];
+
+// CRYPTO TradingView Configs
+export const CRYPTO_MARKET_OVERVIEW_WIDGET_CONFIG = {
+    colorTheme: "dark",
+    dateRange: "12M",
+    locale: "en",
+    isTransparent: true,
+    showFloatingTooltip: true,
+    symbolActiveColor: "rgba(15, 237, 190, 0.05)",
+    tabs: [
+      {
+        title: "Top Coins",
+        symbols: [
+          { s: "BINANCE:BTCUSDT", d: "Bitcoin" },
+          { s: "BINANCE:ETHUSDT", d: "Ethereum" },
+          { s: "BINANCE:BNBUSDT", d: "Binance Coin" },
+          { s: "BINANCE:ADAUSDT", d: "Cardano" },
+          { s: "BINANCE:XRPUSDT", d: "XRP" },
+          { s: "BINANCE:SOLUSDT", d: "Solana" },
+        ],
+      },
+      {
+        title: "Meme Coins",
+        symbols: [
+          { s: "BINANCE:DOGEUSDT", d: "Dogecoin" },
+          { s: "BINANCE:SHIBUSDT", d: "Shiba Inu" },
+          { s: "BINANCE:PEPEUSDT", d: "Pepe" },
+        ],
+      },
+      {
+        title: "Stablecoins",
+        symbols: [
+          { s: "BINANCE:USDTUSDT", d: "Tether" },
+          { s: "BINANCE:USDCUSDT", d: "USD Coin" },
+          { s: "BINANCE:DAIUSDT", d: "Dai" },
+        ],
+      },
+    ],
+    support_host: "https://www.tradingview.com",
+    backgroundColor: "#141414",
+    width: "100%",
+    height: 600,
+    showSymbolLogo: true,
+    showChart: true,
+};
+  
+export const CRYPTO_HEATMAP_WIDGET_CONFIG = {
+    dataSource: "crypto",
+    blockSize: "market_cap_calc",
+    blockColor: "change",
+    grouping: "asset",
+    isTransparent: true,
+    locale: "en",
+    colorTheme: "dark",
+    hasTopBar: false,
+    isZoomEnabled: true,
+    hasSymbolTooltip: true,
+    width: "100%",
+    height: "600",
+};
+  
+export const CRYPTO_TOP_STORIES_WIDGET_CONFIG = {
+    displayMode: "regular",
+    feedMode: "crypto",
+    colorTheme: "dark",
+    isTransparent: true,
+    locale: "en",
+    market: "crypto",
+    width: "100%",
+    height: "600",
+};
+  
+export const CRYPTO_MARKET_DATA_WIDGET_CONFIG = {
+    title: "Cryptocurrencies",
+    width: "100%",
+    height: 600,
+    locale: "en",
+    showSymbolLogo: true,
+    colorTheme: "dark",
+    isTransparent: false,
+    backgroundColor: "#0F0F0F",
+    symbolsGroups: [
+      {
+        name: "Top Coins",
+        symbols: [
+          { name: "BINANCE:BTCUSDT", displayName: "Bitcoin" },
+          { name: "BINANCE:ETHUSDT", displayName: "Ethereum" },
+          { name: "BINANCE:BNBUSDT", displayName: "Binance Coin" },
+          { name: "BINANCE:ADAUSDT", displayName: "Cardano" },
+          { name: "BINANCE:XRPUSDT", displayName: "XRP" },
+        ],
+      },
+      {
+        name: "Layer 1s",
+        symbols: [
+          { name: "BINANCE:SOLUSDT", displayName: "Solana" },
+          { name: "BINANCE:AVAXUSDT", displayName: "Avalanche" },
+          { name: "BINANCE:DOTUSDT", displayName: "Polkadot" },
+          { name: "BINANCE:MATICUSDT", displayName: "Polygon" },
+          { name: "BINANCE:ATOMUSDT", displayName: "Cosmos" },
+        ],
+      },
+    ],
+};
+  
+// Advanced Candlestick Chart (for Crypto)
+export const CRYPTO_CANDLE_CHART_WIDGET_CONFIG = (symbol: string) => ({
+    autosize: true,
+    symbol: symbol.toUpperCase(), // e.g. BINANCE:BTCUSDT
+    interval: "60", // 60min candles
+    timezone: "Etc/UTC",
+    theme: "dark",
+    height: 800,
+    style: "1", // candle style
+    locale: "en",
+    enable_publishing: false,
+    allow_symbol_change: true,
+    withdateranges: true,
+    range: "12M",
+    hide_side_toolbar: false,
+    hide_top_toolbar: false,
+    calendar: true,
+    studies: [
+      "MACD@tv-basicstudies",
+      "RSI@tv-basicstudies",
+      "BB@tv-basicstudies",
+    ],
+    support_host: "https://www.tradingview.com",
+});
