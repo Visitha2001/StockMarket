@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from '@/lib/constants';
 import { Loader2 } from 'lucide-react';
 import React from 'react'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 const SignUp = () => {
   const {
