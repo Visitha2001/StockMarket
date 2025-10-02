@@ -4,12 +4,16 @@ import FooterLinks from '@/components/formes/FooterLinks';
 import InputField from '@/components/formes/InputField';
 import SelectField from '@/components/formes/selectField';
 import { Button } from '@/components/ui/button';
+import { singUpWithEmail } from '@/lib/actions/auth.actions';
 import { INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from '@/lib/constants';
 import { Loader2 } from 'lucide-react';
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
+import { toast } from 'sonner';
 
 const SignUp = () => {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -28,9 +32,14 @@ const SignUp = () => {
 
   const onSubmit = async(data: SignUpFormData) => {
     try {
-      console.log(data) 
+      const results = await singUpWithEmail(data);
+      toast.success('Sign up successful');
+      if(results.success) router.push('/');
     } catch (error) {
       console.error(error)
+      toast.error('Sign up failed',
+        {description: error instanceof Error ? error.message : 'failed to sign up'}
+      )
     }
   }
 

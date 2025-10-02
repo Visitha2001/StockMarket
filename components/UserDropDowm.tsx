@@ -13,15 +13,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useRouter } from 'next/navigation'
 import { LogOut } from 'lucide-react'
 import NavItems from './NavItems'
+import { signOut } from '@/lib/actions/auth.actions'
+import { toast } from 'sonner'
 
-const UserDropDowm = () => {
+const UserDropDowm = ({user}: {user: User}) => {
     const router = useRouter()
     const handleSignOut = async() => {
+        await signOut()
+        toast.success('Sign out successful')
         router.push('/sign-in')
-    }
-    const user = {
-        name: 'John Doe',
-        email: 'john.doe@example.com',
     }
   return (
     <DropdownMenu>

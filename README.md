@@ -65,3 +65,48 @@ npm install react-select-country-list --save
 ```bash
 npm i --save-dev @types/react-select-country-list
 ```
+
+## better-auth install
+```bash
+npm install better-auth
+```
+- better auth is a authentication library for next.js
+- it is a wrapper around next-auth
+- it provides a simple way to add authentication to your next.js app
+
+## inngest cli install
+```bash
+npx inngest-cli@latest dev
+```
+- inngest is a serverless functions platform for building serverless functions
+- it provides a simple way to add serverless functions to your next.js app
+
+## inngest install
+```bash
+npm install inngest
+```
+
+## start inngest
+```bash
+npx inngest-cli@latest dev
+```
+
+## stop inngest
+```bash
+npx inngest-cli@latest stop
+```
+
+## nodemailer install
+```bash
+npm install nodemailer
+```
+```bash
+npm i --save-dev @types/nodemailer
+```
+
+## ignore lint errors
+```ts
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/ban-ts-comment */
+database: mongodbAdapter(db as any),
+/* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/ban-ts-comment */
+```
