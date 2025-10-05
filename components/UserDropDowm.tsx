@@ -16,7 +16,7 @@ import NavItems from './NavItems'
 import { signOut } from '@/lib/actions/auth.actions'
 import { toast } from 'sonner'
 
-const UserDropDowm = ({user}: {user: User}) => {
+const UserDropDowm = ({user, initialStocks}: {user: User, initialStocks: StockWithWatchlistStatus[]}) => {
     const router = useRouter()
     const handleSignOut = async() => {
         await signOut()
@@ -29,7 +29,7 @@ const UserDropDowm = ({user}: {user: User}) => {
             <Button variant="ghost" className='flex items-center gap-3 text-gray-400 hover:text-yellow-600' asChild>
                 <div> 
                     <Avatar className='h-8 w-8'>
-                        <AvatarImage src="https://avatars.githubusercontent.com/u/112849425?v=4" className='rounded-full'/>
+                        {/* <AvatarImage src="https://avatars.githubusercontent.com/u/112849425?v=4" className='rounded-full'/> */}
                         <AvatarFallback className='!bg-yellow-500 !text-yellow-900 font-bold'>
                             {user.name.charAt(0).toUpperCase()}
                         </AvatarFallback>
@@ -44,7 +44,7 @@ const UserDropDowm = ({user}: {user: User}) => {
             <DropdownMenuLabel className='flex relative items-center gap-3 py-2'>
                 <div className='flex relative items-center gap-3 py-2'>
                     <Avatar className='h-8 w-8'>
-                        <AvatarImage src="https://avatars.githubusercontent.com/u/112849425?v=4" className='rounded-full'/>
+                        {/* <AvatarImage src="https://avatars.githubusercontent.com/u/112849425?v=4" className='rounded-full'/> */}
                         <AvatarFallback className='!bg-yellow-500 !text-yellow-900 font-bold'>
                             {user.name.charAt(0).toUpperCase()}
                         </AvatarFallback>
@@ -62,7 +62,7 @@ const UserDropDowm = ({user}: {user: User}) => {
             </DropdownMenuItem>
             <DropdownMenuSeparator className='block sm:hidden bg-gray-600'/>
             <nav className='sm:hidden'>
-                <NavItems />
+                <NavItems initialStocks={initialStocks}/>
             </nav>
         </DropdownMenuContent>
     </DropdownMenu>
