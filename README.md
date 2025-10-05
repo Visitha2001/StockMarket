@@ -110,3 +110,7 @@ npm i --save-dev @types/nodemailer
 database: mongodbAdapter(db as any),
 /* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/ban-ts-comment */
 ```
+
+## finnhub
+- finnhub is a stock market data provider
+- it provides a simple way to add stock market data to your next.js app
