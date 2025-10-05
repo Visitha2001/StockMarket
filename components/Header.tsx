@@ -4,7 +4,7 @@ import Image from 'next/image'
 import NavItems from '@/components/NavItems'
 import UserDropDowm from '@/components/UserDropDowm'
 
-const Header = ({user}: {user: User}) => {
+const Header = ({user, initialStocks}: {user: User, initialStocks: StockWithWatchlistStatus[]}) => {
   return (
     <header className="sticky top-0 header">
       <div className="container header-wrapper">
@@ -17,9 +17,9 @@ const Header = ({user}: {user: User}) => {
             />
         </Link>
         <nav className='hidden sm:block'>
-          <NavItems />
+          <NavItems initialStocks={initialStocks}/>
         </nav>
-        <UserDropDowm user={user} />
+        <UserDropDowm user={user} initialStocks={initialStocks}/>
       </div>
     </header>
   )
