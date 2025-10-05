@@ -114,3 +114,8 @@ database: mongodbAdapter(db as any),
 ## finnhub
 - finnhub is a stock market data provider
 - it provides a simple way to add stock market data to your next.js app
+
+## git ignore(if you want to ignore .env file and remove it from git history and local)
+```bash
+git rm --cached .env
+```
