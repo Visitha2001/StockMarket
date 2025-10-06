@@ -40,7 +40,7 @@ const UserDropDowm = ({user, initialStocks}: {user: User, initialStocks: StockWi
                 </div>
             </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56" align="start">
+        <DropdownMenuContent className="w-56" align="end">
             <DropdownMenuLabel className='flex relative items-center gap-3 py-2'>
                 <div className='flex relative items-center gap-3 py-2'>
                     <Avatar className='h-8 w-8'>
@@ -49,9 +49,13 @@ const UserDropDowm = ({user, initialStocks}: {user: User, initialStocks: StockWi
                             {user.name.charAt(0).toUpperCase()}
                         </AvatarFallback>
                     </Avatar>
-                    <div className='md:flex flex-col items-start'>
-                        <span className='text-base font-medium text-gray-400'>{user.name}</span>
-                        <span className='text-xs text-gray-400'>{user.email}</span>
+                    <div className='flex flex-col items-start min-w-0'>
+                        <span className='text-base font-medium text-gray-400'>
+                            {user.name}
+                        </span>
+                        <span className='text-xs text-gray-400'>
+                            {user.email}
+                        </span>
                     </div>
                 </div>
             </DropdownMenuLabel>
